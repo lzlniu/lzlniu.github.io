@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/rrgp/static/css/main.f9380602.chunk.css",
+    "main.js": "/rrgp/static/js/main.f4329ced.chunk.js",
+    "main.js.map": "/rrgp/static/js/main.f4329ced.chunk.js.map",
+    "runtime-main.js": "/rrgp/static/js/runtime-main.37c6ff82.js",
+    "runtime-main.js.map": "/rrgp/static/js/runtime-main.37c6ff82.js.map",
+    "static/js/2.5537a8cd.chunk.js": "/rrgp/static/js/2.5537a8cd.chunk.js",
+    "static/js/2.5537a8cd.chunk.js.map": "/rrgp/static/js/2.5537a8cd.chunk.js.map",
+    "index.html": "/rrgp/index.html",
+    "static/css/main.f9380602.chunk.css.map": "/rrgp/static/css/main.f9380602.chunk.css.map",
+    "static/js/2.5537a8cd.chunk.js.LICENSE.txt": "/rrgp/static/js/2.5537a8cd.chunk.js.LICENSE.txt",
+    "static/media/Main.css": "/rrgp/static/media/bgi.f504b7ff.jpg",
+    "static/media/bioinformatics data skills.49d539a9.png": "/rrgp/static/media/bioinformatics data skills.49d539a9.png",
+    "static/media/genomes 4.09952b38.png": "/rrgp/static/media/genomes 4.09952b38.png",
+    "static/media/fonts.css": "/rrgp/static/media/rale.d17a1411.ttf",
+    "static/media/qrcode.e7f5538b.jpg": "/rrgp/static/media/qrcode.e7f5538b.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.37c6ff82.js",
+    "static/js/2.5537a8cd.chunk.js",
+    "static/css/main.f9380602.chunk.css",
+    "static/js/main.f4329ced.chunk.js"
+  ]
+}
