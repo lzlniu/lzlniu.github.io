@@ -1,6 +1,9 @@
 .App {
   text-align: center;
 }
+#Apptop {
+  top: 0px;
+}
 /*
 @media (prefers-reduced-motion: no-preference) {
   .App-iconR {
@@ -27,14 +30,14 @@
   text-align:center;
   width:60%;
   color:rgb(222,222,222);
-  font-size: 4vh;
+  font-size: 3.5vh;
   font-weight:100;
   line-height:8vh;
 }
 
 #App-header_text_title {
   color:rgb(226,226,226);
-  font-size:11vh;
+  font-size:8vh;
   font-weight:500;
   line-height:12vh;
 }
@@ -86,7 +89,7 @@
 }
 */
 nav {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   bottom: 0;
@@ -94,14 +97,14 @@ nav {
 }
   
 .background {
-  position: fixed;
+  position: absolute;
   margin:0 auto;
   text-align:center;
   top: 0;
   left: 0;
   bottom: 0;
-  width: 100px;
-  background: rgba(33,33,33,0.5);
+  width: 53vmin;
+  background: rgba(33,33,33,0.7);
 }
   
 button {
@@ -111,7 +114,7 @@ button {
   -moz-user-select: none;
   -ms-user-select: none;
   cursor: pointer;
-  position:fixed;
+  position: absolute;
   margin:0 auto;
   top: 14px;
   left: 11px;
@@ -129,33 +132,34 @@ li {
   
 ul {
   position: absolute;
-  top: 90px;
-  left: 22.5px;
+  top: 18vh;
+  left: 5vmin;
 }
   
 li {
   list-style: none;
-  margin-bottom: 20px;
+  margin-bottom: 6vmin;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 li a {
-  font-size: 30px;
+  font-size: 6vmin;
   color: rgb(225,225,225);
 }
   
 .icon-placeholder {
-  width: 50px;
-  height: 50px;
+  width: 9vmin;
+  height: 9vmin;
   border-radius: 50%;
 }
   
 .text-placeholder {
-  font-size: 3vmin;
-  border-radius: 1vmin;
-  width: 5vmin;
-  height: 5vmin;
+  font-size: 6vmin;
+  margin-left: 2vmin;
+  border-radius: 2vmin;
+  width: 28vmin;
+  height: 9vmin;
   flex: 1;
 }
   

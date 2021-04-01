@@ -1,6 +1,6 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { isWhiteSpaceLike } from "typescript";
+//import { isWhiteSpaceLike } from "typescript";
 
 /*
 interface IProps {
@@ -21,7 +21,7 @@ const Path = ({...props}) => (
   <motion.path
     fill="transparent"
     strokeWidth="3"
-    stroke="rgb(225,225,225)"
+    stroke="#FFF"
     strokeLinecap="round"
     {...props}
   />
