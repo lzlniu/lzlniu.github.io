@@ -67,18 +67,47 @@ function Home({...props}) {
       </motion.nav>
     </header>
   );
-}
+};
+
+function getRandomInt(max:number) {
+  return Math.floor(Math.random()*max);
+}; //get random int value, max set to 255 for color randomized
+
+function getRandomColorSeries() {
+  const initial_red = getRandomInt(255);const initial_green = getRandomInt(255);const initial_blue = getRandomInt(255);
+  const middle_red = getRandomInt(255);const middle_green = getRandomInt(255);const middle_blue = getRandomInt(255);
+  const final_red = getRandomInt(255);const final_green = getRandomInt(255);const final_blue = getRandomInt(255);
+  const initial_color = `rgb(${initial_red}, ${initial_green}, ${initial_blue})`;
+  const middle_color = `rgb(${middle_red}, ${middle_green}, ${middle_blue})`;
+  const final_color = `rgb(${final_red}, ${final_green}, ${final_blue})`;
+  const red_step = Math.abs(middle_red-initial_red)/4; //In this case, 3 gradient color for the initial and middle
+  const green_step = Math.abs(middle_green-initial_green)/4;
+  const blue_step = Math.abs(middle_blue-initial_blue)/4;
+  const red_step2 = Math.abs(middle_red-final_red)/4; // 3 gradient color for the middle and final
+  const green_step2 = Math.abs(middle_green-final_green)/4;
+  const blue_step2 = Math.abs(middle_blue-final_blue)/4;
+  const color1 = `rgb(${initial_red+red_step}, ${initial_green+green_step}, ${initial_blue+blue_step})`;
+  const color2 = `rgb(${initial_red+2*red_step}, ${initial_green+2*green_step}, ${initial_blue+2*blue_step})`;
+  const color3 = `rgb(${initial_red+3*red_step}, ${initial_green+3*green_step}, ${initial_blue+3*blue_step})`;
+  const color4 = `rgb(${middle_red+red_step2}, ${middle_green+green_step2}, ${middle_blue+blue_step2})`;
+  const color5 = `rgb(${middle_red+2*red_step2}, ${middle_green+2*green_step2}, ${middle_blue+2*blue_step2})`;
+  const color6 = `rgb(${middle_red+3*red_step2}, ${middle_green+3*green_step2}, ${middle_blue+3*blue_step2})`;
+  const degree = getRandomInt(360);
+  //return red_step
+  return ({ background: `linear-gradient(${degree}deg, ${initial_color}, ${color1}, ${color2}, ${color3}, ${middle_color}, ${color4}, ${color5}, ${color6},${final_color})`});
+}; //input a initial start/end color, return a random color series
 
 function CommonContent({...props}) {
   //const newheaderstyle = { background: `linear-gradient(0deg, rgb(215,255,5),#212121)` }
   //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(70,107,47), rgb(108,181,61), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5))` };
-  const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5), rgb(124,144,19), rgb(33,33,33))` };
+  //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5), rgb(124,144,19), rgb(33,33,33))` };
+  const newmainstyle = getRandomColorSeries(); //My default color is #212121 which is rgb(33,33,33), while this is random
   const textmlbottom = <div id="bottom">{copyright}</div>;
   
   return (
     <div>
       <div className="header">
-        <div id="header_text">
+        <div id="header_text" style={newmainstyle}>
           <h1>{props.atitle}</h1>
           <h2>{props.asubtitle}</h2>
         </div>
@@ -86,30 +115,50 @@ function CommonContent({...props}) {
       <div className="main" style={newmainstyle}>
         <div id="main_text2" style={{ margin: `0 auto` }}>
           <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
         </div>
         <div id="main_text2">
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
+          <p>Hello, I'm Zelin Li, a bachelor student studied Biological Science (Marine Biology track) at Ocean University of China, and now is a master student studying Bioinformatics (Computer Science track) at University of Copenhagen.</p>
         </div>
         <div id="main_text2">
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
+          <p>You can find this page's source code and many other stuffs on my <a href="https://github.com/lzlniu" target="_blank">github</a>.</p>
+          <p>For other stuffs made by me, you can go to the top menu and click to see '2,3,4,5'.</p>
         </div>
         <div id="main_text2">
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
-          <p>Testing</p>
+          <p>I had spent one year internship at Institute of Oceanology, Chinese Academy of Sciencs. Mainly focused on comparative genomics. I worked on NGS high-throughout sequences analysis, and mostly is DNA-seq analysis there. Including de novo genome assembly, annotation, amplicon analysis, metagenomics and phylogenetics analysis.</p>
         </div>
+        <div id="main_text2">
+        <p>I used several soft to do these jobs and create several bioinformatics pipelines (you can found them on my Github repositories), I also list up these softwares' website or Github page and recommend books here:</p>
+        <details><summary>Assembly</summary>
+				  <h4><a href="https://github.com/bcgsc/abyss" target="_blank">1.ABySS</a></h4>
+				  <h4><a href="http://platanus.bio.titech.ac.jp/platanus2" target="_blank">2.Platanus_allee</a></h4>
+				  <h4><a href="http://cab.spbu.ru/software/spades/" target="_blank">3.SPAdes</a></h4>
+				  <h4><a href="https://github.com/aquaskyline/SOAPdenovo2" target="_blank">4.SOAPdenovo</a></h4>
+				  <h4><a href="https://github.com/voutcn/megahit" target="_blank">5.megahit</a></h4>
+				  <h4><a href="https://www.ebi.ac.uk/~zerbino/velvet/" target="_blank">6.velvet</a></h4>
+				  <h4><a href="https://github.com/alekseyzimin/masurca/releases" target="_blank">7.MaSuRCA</a></h4>
+				  <h4><a href="https://www.pacb.com/support/software-downloads/" target="_blank">8.smrtlink</a></h4>
+				  <h4><a href="https://canu.readthedocs.io/en/latest/" target="_blank">9.canu</a></h4>
+			  </details>
+			  <details><summary>Alignment and QC</summary>
+				  <h4><a href="http://bio-bwa.sourceforge.net" target="_blank">1.BWA</a></h4>
+				  <h4><a href="http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml" target="_blank">2.Bowtie2</a></h4>
+				  <h4><a href="https://github.com/DaehwanKimLab/tophat" target="_blank">3.Tophat</a></h4>
+				  <h4><a href="https://daehwankimlab.github.io/hisat2/" target="_blank">4.HISAT2</a></h4>
+				  <h4><a href="https://github.com/samtools/samtools" target="_blank">5.SAMtools</a></h4>
+				  <h4><a href="https://github.com/samtools/bcftools" target="_blank">6.BCFtools</a></h4>
+				  <h4><a href="http://broadinstitute.github.io/picard/" target="_blank">7.Picard-tools</a></h4>
+				  <h4><a href="http://www.bioinformatics.babraham.ac.uk/projects/fastqc/" target="_blank">8.FastQC</a></h4>
+			  </details>
+		    <details><summary>Recommend Books</summary>
+          <h4><a href="https://b-ok.cc/book/2734031/5bfa36" target="_blank">1.Bioinformatics data skills</a></h4>
+          <h4><a href="https://b-ok.cc/book/5005191/12b728" target="_blank">2.Genomes 4</a></h4>
+			  </details>
+        </div>
+        <div id="main_text2">
+          <p>Recently I am constructing this page with react; I am learning text mining for future research. Also, If you are a student from UCPH, you're welcome to contribute on <a href="https://lzlniu.github.io/UCPH_courses/" target="_blank">UCPH_courses</a>, which help students sharing their study notes and learn from each other.</p>
+        </div>
+        {textmlbottom}
       </div>
-      {textmlbottom}
     </div>
   );
 };
@@ -185,7 +234,7 @@ function tick() {
     description: 'Better than mantis shrimp!',
   };
   return pageinfo
-}
+};
 
 const pinfo = tick();
 
