@@ -79,20 +79,16 @@
 }
 .main {
 	width:100%;
+	font-family:Raleway,sans-serif;
 	/*background-color:#8968CD; #f09*/
 	background: linear-gradient(-45deg, rgb(225,225,225), #F09, #8968CD);
 	background-position:center center;
 	background-size:cover;
 }
-p {
-	font-family:Raleway,sans-serif;
-}
 summary {
-	font-family:Raleway,sans-serif;
 	font-size: 20px;
 }
 #main_text {
-	font-family:Raleway,sans-serif;
 	opacity:0.4;
 	background:rgb(225,225,225);
 	text-align:center;
@@ -127,7 +123,6 @@ summary {
 	width:66%;
 }
 #main_text2 {
-	font-family:Raleway,sans-serif;
 	opacity:0.4;
 	background:rgb(225,225,225);
 	text-align:center;

@@ -9,11 +9,41 @@ import { Route, Switch, Link } from "react-router-dom";
 import arrowpng from "./page/content/arrow.png";
 //import pausegif from "./page/content/pause.gif";
 import qrcode from "./page/content/qrcode.jpg";
+import qqgroupchatimg from "./page/content/qqgroupchatimg.png"
 import "./Main.css";
 import "./fonts.css";
 import "./page/content/style.css";
 import { getRandomColorSeries } from "./page/content/random_color_series";
 import { gen_main_text2 } from "./page/content/main_text2_generation";
+
+const qqdcrp = 'This is an app for text mining on Tecent QQ chat files.';
+const qqset = [
+  'To do this, first you need to open your QQ client soft on PC. Click the bottom left \'三\' shape main menu, then click options (设置).',
+  'After that, go to the safty options (安全设置), from \'message record (消息记录)\' find and click the \'Open the message manager (打开消息管理器)\'.',
+  'Finally, you can export any message from normal chat or group chat by right click the dialog box and click \'export message record (导出消息记录)\'',
+  'You can export them separately or export as a whole (e.g. all group chat). I suggest to export them in \'.txt\' format, and they will look like picture below.'
+];
+const qqtextapp = 
+  <div id="bottom" style={{ top:`35px` }}>
+    <p>All group chat (view in <a href="https://www.sublimetext.com/" style={{ color:`gray` }}>Sublime Text 3</a>):</p>
+    <img src={qqgroupchatimg}></img>
+  </div>
+;
+
+const mcdcrp = 'This mod is made by myself for Java practicing and OOP programming.'
+const mcset = [
+  'The mod is still in testing, much of the code as well as description can be seen at https://github.com/lzlniu/minecraft_bioinformatics_mod.',
+  'You are welcome to pull request to that repo. But recently I may not update it.'
+];
+const kudcrp = 'KU courses study notes, collecting from fellow students.'
+const kuset= [
+  `For now, this page will be rely on GitHub page temple at: https://lzlniu.github.io/UCPH_courses. I may update it to here in the future.`
+];
+const otherdcrp = 'This is my personal notebook (or called blog), and most of which may record in Chinese. 以下为中文记录:'
+const otherset = [
+  '初步完成了这一React网页的基本框架，感觉JavaScript/TypeScript实在是能做太多事了，也包含了太多形形色色我还不能很好理解的编程范式，但蛮有趣。\t\t——2021/4/2',
+  '待续'
+];
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -86,6 +116,7 @@ interface MyProps {
   asubtitle:string;
   description1:string;
   description2_set:string[];
+  this_app:JSX.Element;
 }
 
 function CommonContent({...props}:MyProps) {
@@ -93,7 +124,8 @@ function CommonContent({...props}:MyProps) {
   //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(70,107,47), rgb(108,181,61), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5))` };
   //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5), rgb(124,144,19), rgb(33,33,33))` };
   const newmainstyle = getRandomColorSeries(); //My default color is #212121 which is rgb(33,33,33), while this is random
-  const textmlbottom = <div id="bottom">{copyright}</div>;
+  const textmlbottom = <div id="bottom" style={{ top:`25px`, marginTop:'25px' }}>{copyright}</div>;
+
   return (
     <div>
       <div className="header" style={newmainstyle}>
@@ -107,6 +139,7 @@ function CommonContent({...props}:MyProps) {
       <div className="main" style={{ background: `#212121` }}>
         <div id="main_text2" style={{ margin: `0 auto` }}><p>{props.description1}</p></div>
         {props.description2_set.map(i => gen_main_text2(i))}
+        {props.this_app}
         {textmlbottom}
       </div>
     </div>
@@ -188,44 +221,19 @@ function tick() {
   return pageinfo
 };
 
-const pinfo = tick();
-
 export const Main = () => {
-  const qqdcrp = 'Text mining on Tecent QQ chat files.';
-  const qqset = [
-    'To do this, first you need to open your QQ client soft on PC. Click the bottom left \'三\' shape main menu, then click options (设置).',
-    'After that, go to the safty options (安全设置), from \'message record (消息记录)\' find and click the \'Open the message manager (打开消息管理器)\'.',
-    'Finally, you can export any message from normal chat or group chat by right click the dialog box and click \'export message record (导出消息记录)\'',
-    'You can export them separately or export as a whole (e.g. all group chat). I suggest to export them in \'.txt\' format, and they will look like picture below.'
-  ];
-  const mcdcrp = 'This mod is made by myself for Java practicing and OOP programming.'
-  const mcset = [
-    'mc testing',
-    'Mc testing',
-    'MC0001 testing'
-  ];
-  const kudcrp = 'KU courses study notes, collecting from fellow students.'
-  const kuset= [
-    'ku KU testing'
-  ];
-  const otherdcrp = 'This is my personal notebook (or called blog).'
-  const otherset = [
-    'aaaa',
-    'bbbb',
-    'ccccc',
-    'dddd ddd ddd ddd',
-    'asfasg fas'
-  ];
+  const pinfo = tick();
+
   return (
     <div className="App">
       <div id="Apptop"></div>
       <Switch>
         <Route exact path="/"><Home title={pinfo.title} description={pinfo.description} date={pinfo.date}/></Route>
         <Route path="/intro"><BW /></Route>
-        <Route path="/textml"><CommonContent atitle="Text ML" asubtitle="Using QQ" description1={qqdcrp} description2_set={qqset}/></Route>
-        <Route path="/minecraft"><CommonContent atitle="Minecraft" asubtitle="Bioinformatics mod" description1={mcdcrp} description2_set={mcset}/></Route>
-        <Route path="/ucph"><CommonContent atitle="UCPH courses" asubtitle="" description1={kudcrp} description2_set={kuset}/></Route>
-        <Route path="/other"><CommonContent atitle="Other" asubtitle="Zelin's note" description1={otherdcrp} description2_set={otherset}/></Route>
+        <Route path="/textml"><CommonContent atitle="Text ML" asubtitle="Using QQ" description1={qqdcrp} description2_set={qqset} this_app={qqtextapp}/></Route>
+        <Route path="/minecraft"><CommonContent atitle="Minecraft" asubtitle="Bioinformatics mod" description1={mcdcrp} description2_set={mcset} this_app={<p></p>}/></Route>
+        <Route path="/ucph"><CommonContent atitle="UCPH courses" asubtitle="" description1={kudcrp} description2_set={kuset} this_app={<p></p>}/></Route>
+        <Route path="/other"><CommonContent atitle="Other" asubtitle="Zelin's note" description1={otherdcrp} description2_set={otherset} this_app={<p></p>}/></Route>
       </Switch>
     </div>
   );
