@@ -174,23 +174,22 @@ summary {
 }
 #bottom {
 	top:75px;
-	bottom:0px;
 	width:100%;
-	text-align:center;
 	color:rgb(225,225,225);
 	background:#212121;
 	background-size:cover;
 	position:relative;
 	padding-bottom:2px;
-	padding-top:15px;
+	padding-top:2vh;
 	margin-top:75px;
 }
 #bottom p {
-	margin-left: 20px;
-	margin-right: 20px;
+	font-size:17px;
+	margin-left: calc(6vmin + 3vmax);
+	margin-right: calc(6vmin + 3vmax);
 }
 #bottom img {
-	width:100%;
-	max-width:320px;
+	width:85%;
+	max-width:960px;
 	overflow:hidden;
 }

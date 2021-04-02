@@ -25,8 +25,9 @@ const qqset = [
 ];
 const qqtextapp = 
   <div id="bottom" style={{ top:`35px` }}>
-    <p>All group chat (view in <a href="https://www.sublimetext.com/" style={{ color:`gray` }}>Sublime Text 3</a>):</p>
+    <p>All group chat (view in <a href="https://www.sublimetext.com/" style={{ color:`gray` }}>Sublime Text</a>):</p>
     <img src={qqgroupchatimg}></img>
+    <p>To be continued!</p>
   </div>
 ;
 
@@ -69,8 +70,8 @@ const sidebar = {
 const scrollup = <div className="downb"><a href="#Apptop"><img src={arrowpng}></img></a></div>;
 const scrollback = <div className="downb2"><Link to="/" style={{ background:`transparent` }}><a><img src={arrowpng} style={{ transform: `rotate(-90deg)` }}></img></a></Link></div>
 const contactinfo = <p>If you would like to know more about me, feel free to contact me through WeChat Official Account 'newslzl' or my e-mail: zelin.l@foxmail.com.</p>;
-const qrimage = <img src={qrcode} alt="newslzl's QR-code"></img>;
-const copyright = <p>Copyright 2020-2021 Zelin Li all rights reserved</p>;
+const qrimage = <img src={qrcode} alt="newslzl's QR-code" style={{ maxWidth:`360px` }}></img>;
+const copyright = <p style={{fontSize:`14px`, marginLeft:`10px`, marginRight:`10px` }}>Copyright 2020-2021 Zelin Li all rights reserved</p>;
 
 function Home({...props}) {
   const [isOpen, toggleOpen] = useCycle(false, true);
@@ -129,8 +130,6 @@ function CommonContent({...props}:MyProps) {
   return (
     <div>
       <div className="header" style={newmainstyle}>
-        {scrollup}
-        {scrollback}
         <div id="header_text">
           <h1>{props.atitle}</h1>
           <h2>{props.asubtitle}</h2>
@@ -142,6 +141,8 @@ function CommonContent({...props}:MyProps) {
         {props.this_app}
         {textmlbottom}
       </div>
+      {scrollup}
+      {scrollback}
     </div>
   );
 };
