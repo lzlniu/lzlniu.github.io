@@ -26,15 +26,15 @@ const variants = {
 
 //const colors = ["rgba(255,0,153,0.5)", "rgba(255,0,119,0.5)", "rgb(211,9,225)", "rgb(137,104,205)", "rgb(156,104,255)"];
 const bgcolors = ["rgba(255,0,153,0.5)", "rgba(255,0,119,0.5)", "rgba(211,9,225,0.5)", "rgba(137,104,205,0.5)", "rgba(156,104,255,0.5)"];
-const numlinks = [<Link to="/">1</Link>, <Link to="/textml">2</Link>, <Link to="/minecraft">3</Link>, <Link to="/ucph">4</Link>, <Link to="/other">5</Link>];
-const wordlinks = [<Link to="/">Intro</Link>, <Link to="/textml">Text ML</Link>, <Link to="/minecraft">Minecraft</Link>, <Link to="/ucph">UCPH</Link>, <Link to="/other">Other</Link>];
+const numlinks = [<Link to="/intro">1</Link>, <Link to="/textml">2</Link>, <Link to="/minecraft">3</Link>, <Link to="/ucph">4</Link>, <Link to="/other">5</Link>];
+const wordlinks = [<Link to="/intro">Intro</Link>, <Link to="/textml">Text ML</Link>, <Link to="/minecraft">Minecraft</Link>, <Link to="/ucph">UCPH</Link>, <Link to="/other">Other</Link>];
 
 export const MenuItem = ({ i }: IProps) => {
   const style = { border: `2px solid rgba(225,225,225,1)` , background: `${bgcolors[i]}`};
   return (
     <motion.li
       variants={variants}
-      whileHover={{ scale: 1.1 }}
+      whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
     >
       <div className="icon-placeholder" style={style}>{numlinks[i]}</div>

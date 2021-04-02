@@ -4,7 +4,13 @@
 	top:10px;
 	right:10px;
 }
-.downb a {
+.downb2 {
+	position:fixed;
+	margin:0 auto;
+	top:10px;
+	left:10px;
+}
+.downb a, .downb2 a {
 	position:relative;
 	display:block;
 	width:80px;
@@ -19,10 +25,10 @@
 	-moz-transition:all .5s;
 	transition:all .5s;
 }
-.downb a img {
+.downb a img, .downb2 a img {
 	padding:15px;
 }
-.downb a:hover {
+.downb a:hover, .downb2 a:hover {
 	transform:rotate(360deg);
 	-ms-transform:rotate(360deg);
 	-moz-transform:rotate(360deg);
@@ -39,6 +45,9 @@
 	background-color:#212121;
 	background-position:center center;
 	background-size:cover;
+}
+#header_top {
+	top: 0px;
 }
 #header_text {
 	margin:0 auto;
@@ -61,7 +70,7 @@
 	top:-1vh;
 }
 #header_text h1 {
-	font-size:8vh;
+	font-size:6vh;
 	font-family:Quicksand,cursive,sans-serif;
 }
 #header_text h2 {

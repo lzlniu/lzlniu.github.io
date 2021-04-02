@@ -4,17 +4,9 @@
 #Apptop {
   top: 0px;
 }
-/*
-@media (prefers-reduced-motion: no-preference) {
-  .App-iconR {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-*/
 .App-header {
-  background-image:url("bgi.jpg");
-  background-position:center center;
-  /*background-color: #282c34;*/
+  background-image:url("./page/content/bgi.jpg");
+  background-position:center center; /*background-color: #282c34;*/
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -22,7 +14,6 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
 }
-
 #App-header_text {
   font-family:Quicksand,sans-serif;
   margin:0 auto;
@@ -34,20 +25,17 @@
   font-weight:100;
   line-height:8vh;
 }
-
 #App-header_text_title {
   color:rgb(226,226,226);
   font-size:8vh;
   font-weight:500;
   line-height:12vh;
 }
-
 #App-header_text_time {
   /*font-family:SimHei,sans-serif;*/
   font-size:3vh;
   line-height:6vh;
 }
-
 .App-iconR {
   top: 7vh;
   height: 18vh;
@@ -65,29 +53,16 @@
   transition:all 0.5s;
   z-index:2;
 }
-
 .App-iconR:hover {
   opacity:0.45;
 }
-
 .App-iconR-img {
   height: 18vmin;
   width: 18vmin;
 }
-
 .App-link {
   color: #61dafb;
 }
-/*
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-*/
 nav {
   position: absolute;
   top: 0;
@@ -95,7 +70,6 @@ nav {
   bottom: 0;
   width: 10px;
 }
-  
 .background {
   position: absolute;
   margin:0 auto;
@@ -105,8 +79,7 @@ nav {
   bottom: 0;
   width: 53vmin;
   background: rgba(33,33,33,0.7);
-}
-  
+} 
 button {
   outline: none;
   border: none;
@@ -122,20 +95,17 @@ button {
   height: 80px;
   border-radius: 50%;
   background: transparent;
-}
-  
+} 
 ul,
 li {
   margin: 0;
   padding: 0;
 }
-  
 ul {
   position: absolute;
   top: 18vh;
   left: 5vmin;
 }
-  
 li {
   list-style: none;
   margin-bottom: 6vmin;
@@ -147,13 +117,11 @@ li a {
   font-size: 6vmin;
   color: rgb(225,225,225);
 }
-  
 .icon-placeholder {
   width: 9vmin;
   height: 9vmin;
   border-radius: 50%;
 }
-  
 .text-placeholder {
   font-size: 6vmin;
   margin-left: 2vmin;
@@ -162,7 +130,6 @@ li a {
   height: 9vmin;
   flex: 1;
 }
-  
 .refresh {
   padding: 10px;
   position: absolute;
