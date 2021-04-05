@@ -12,5 +12,10 @@ function main_text2_gen(main_text2_num:number,main_text2_info:string,mt2g:any) {
 */
 export const gen_main_text2 = (main_text2:string) => {
     //main_text2_gen(main_text2_num,`This is count: ${main_text2_num}`,mt2g_str);
-    return (<div id="main_text2"><p>{main_text2}</p></div>);
+    if (main_text2!='' && main_text2!=null) {
+        return (<div id="main_text2"><p>{main_text2}</p></div>);   
+    }
+    else {
+        return (<div></div>); 
+    }
 };

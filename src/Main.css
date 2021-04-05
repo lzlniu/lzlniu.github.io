@@ -63,7 +63,7 @@
 .App-link {
   color: #61dafb;
 }
-nav {
+.App-header nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -80,7 +80,7 @@ nav {
   width: 53vmin;
   background: rgba(33,33,33,0.7);
 } 
-button {
+.App-header button {
   outline: none;
   border: none;
   -webkit-user-select: none;
@@ -96,24 +96,23 @@ button {
   border-radius: 50%;
   background: transparent;
 } 
-ul,
-li {
+.App-header ul, .App-header li {
   margin: 0;
   padding: 0;
 }
-ul {
+.App-header ul {
   position: absolute;
   top: 18vh;
   left: 5vmin;
 }
-li {
+.App-header li {
   list-style: none;
   margin-bottom: 6vmin;
   display: flex;
   align-items: center;
   cursor: pointer;
 }
-li a {
+.App-header li a {
   font-size: 6vmin;
   color: rgb(225,225,225);
 }
@@ -129,18 +128,4 @@ li a {
   width: 28vmin;
   height: 9vmin;
   flex: 1;
-}
-.refresh {
-  padding: 10px;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  width: 20px;
-  height: 20px;
-  top: 10px;
-  right: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
 }

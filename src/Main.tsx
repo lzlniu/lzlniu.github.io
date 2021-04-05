@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRef } from "react";
-import { motion, useCycle } from "framer-motion";
+import { motion, useCycle,  AnimateSharedLayout, AnimatePresence  } from "framer-motion";
 //import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
@@ -12,20 +12,27 @@ import qrcode from "./page/content/qrcode.jpg";
 import qqgroupchatimg from "./page/content/qqgroupchatimg.png"
 import "./Main.css";
 import "./fonts.css";
-import "./page/content/style.css";
-import { getRandomColorSeries } from "./page/content/random_color_series";
-import { gen_main_text2 } from "./page/content/main_text2_generation";
+import "./page/style.css";
+import { getRandomColorSeries } from "./page/random_color_series";
+import { gen_main_text2 } from "./page/main_text2_generation";
+import { Dragbox } from "./page/Dragbox";
+import { Contentbox } from "./page/Contentbox";
 
 const qqdcrp = 'This is an app for text mining on Tecent QQ chat files.';
-const qqset = [
-  'To do this, first you need to open your QQ client soft on PC. Click the bottom left \'三\' shape main menu, then click options (设置).',
-  'After that, go to the safty options (安全设置), from \'message record (消息记录)\' find and click the \'Open the message manager (打开消息管理器)\'.',
-  'Finally, you can export any message from normal chat or group chat by right click the dialog box and click \'export message record (导出消息记录)\'',
-  'You can export them separately or export as a whole (e.g. all group chat). I suggest to export them in \'.txt\' format, and they will look like picture below.'
-];
+const qqset = [''];
+const qqitems = {
+  id:[0, 1, 2, 3], title:["♦","♣","♥","♠"],
+  content:[
+    'To do this, first you need to open your QQ client soft on PC. Click the bottom left \'三\' shape main menu, then click options (设置).',
+    'After that, go to the safty options (安全设置), from \'message record (消息记录)\' find and click the \'Open the message manager (打开消息管理器)\'.',
+    'Finally, you can export any message from normal chat or group chat by right click the dialog box and click \'export message record (导出消息记录)\'',
+    'You can export them separately or export as a whole (e.g. all group chat). I suggest to export them in \'.txt\' format, and they will look like picture below.'
+  ]
+};
 const qqtextapp = 
   <div id="bottom" style={{ top:`35px` }}>
-    <p>All group chat (view in <a href="https://www.sublimetext.com/" style={{ color:`gray` }}>Sublime Text</a>):</p>
+    <Contentbox id={qqitems.id} title={qqitems.title} content={qqitems.content}/>
+    <p>All group chat (view in <a href="https://www.sublimetext.com/" target="_blank" style={{ color:`gray` }}>Sublime Text</a>):</p>
     <img src={qqgroupchatimg}></img>
     <p>To be continued!</p>
   </div>
@@ -111,7 +118,6 @@ function main_text2_gen(main_text2_num:number,main_text2_info:string) {
   return gen_main_text2(main_text2_info);
 };
 */
-
 interface MyProps {
   atitle:string;
   asubtitle:string;
@@ -130,10 +136,7 @@ function CommonContent({...props}:MyProps) {
   return (
     <div>
       <div className="header" style={newmainstyle}>
-        <div id="header_text">
-          <h1>{props.atitle}</h1>
-          <h2>{props.asubtitle}</h2>
-        </div>
+        <Dragbox title={props.atitle} subtitle={props.asubtitle}/>
       </div>
       <div className="main" style={{ background: `#212121` }}>
         <div id="main_text2" style={{ margin: `0 auto` }}><p>{props.description1}</p></div>
@@ -153,8 +156,6 @@ function BW() {
   return (
   <div>
     <div className="header">
-      {scrollup}
-      {scrollback}
       <div id="header_text">
         <h1>Intro</h1>
         <h2>Hello!</h2>
@@ -208,6 +209,8 @@ function BW() {
       </div>
 		  {introbottom}
     </div>
+    {scrollup}
+    {scrollback}
   </div>
   );
 };
