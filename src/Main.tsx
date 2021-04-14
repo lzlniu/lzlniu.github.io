@@ -76,7 +76,7 @@ const sidebar = {
 //const header_bottom = <div id="header_bottom" style={{ bottom:`0px`}}></div>;
 const scrollup = <div className="downb"><a href="#Apptop"><img src={arrowpng}></img></a></div>;
 const scrollback = <div className="downb2"><Link to="/" style={{ background:`transparent` }}><a><img src={arrowpng} style={{ transform: `rotate(-90deg)` }}></img></a></Link></div>
-const contactinfo = <p>If you would like to know more about me, feel free to contact me through WeChat Official Account 'newslzl' or my e-mail: zelin.l@foxmail.com.</p>;
+const contactinfo = <p>If you would like to know more about me, feel free to contact me through WeChat Official Account 'newslzl' or my e-mail: zelin.l@foxmail.com. Google scholar: <a href="https://scholar.google.com/citations?user=y_hS_t4AAAAJ" style={{color:`gray`}} target="_blank">Zelin Li</a>, <a href="https://orcid.org/0000-0002-0790-3064" style={{color:`gray`}} target="_blank">ORCID</a></p>;
 const qrimage = <img src={qrcode} alt="newslzl's QR-code" style={{ maxWidth:`360px` }}></img>;
 const copyright = <p style={{fontSize:`14px`, marginLeft:`10px`, marginRight:`10px` }}>Copyright 2020-2021 Zelin Li all rights reserved</p>;
 
@@ -174,7 +174,7 @@ function BW() {
         <p>For other stuffs made by me, you can go to the top menu and click to see '2,3,4,5'.</p>
       </div>
       <div id="main_text2">
-        <p>I had spent one year internship at Institute of Oceanology, Chinese Academy of Sciencs. Mainly focused on comparative genomics. I worked on NGS high-throughout sequences analysis, and mostly is DNA-seq analysis there. Including de novo genome assembly, annotation, amplicon analysis, metagenomics and phylogenetics analysis.</p>
+        <p>I had spent one year internship at Institute of Oceanology, Chinese Academy of Sciencs. Mainly focused on comparative genomics. I worked on NGS high-throughout sequences analysis, and mostly is DNA-seq analysis there. Including de novo genome assembly, annotation, amplicon analysis and phylogenetics analysis, here is the relative publication: <a href="https://doi.org/10.1016/j.hal.2020.101911" target="_blank">Development of a high-resolution molecular marker for tracking Phaeocystis globosa genetic diversity through comparative analysis of chloroplast genomes</a></p>
       </div>
       <div id="main_text2">
         <p>I used several soft to do these jobs and create several bioinformatics pipelines (you can found them on my Github repositories), I also list up these softwares' website or Github page and recommend books here:</p>
