@@ -3,12 +3,14 @@ import { render } from "react-dom";
 import { Main } from "./Main";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
+import { Helmet } from 'react-helmet';
 
 const App = () => <Main />;
 //render(<App />, document.getElementById("root"))
 
 render(
     <React.StrictMode>
+      <Helmet><title>Zelin's page</title></Helmet>
       <BrowserRouter>
         <App />
       </BrowserRouter>
