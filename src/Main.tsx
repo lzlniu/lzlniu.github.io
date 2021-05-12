@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRef } from "react";
-import { motion, useCycle,  AnimateSharedLayout, AnimatePresence  } from "framer-motion";
+import { motion, useCycle } from "framer-motion";
 //import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
 import { Navigation } from "./Navigation";
@@ -18,8 +18,8 @@ import { gen_main_text2 } from "./page/main_text2_generation";
 import { Dragbox } from "./page/Dragbox";
 import { Contentbox } from "./page/Contentbox";
 
-const qqdcrp = 'This is an app for text mining on Tecent QQ chat files.';
-const qqset = [''];
+// qq text machine learning
+const qqset = ['']; //This is an app for text mining on Tecent QQ chat files.
 const qqitems = {
   id:[0, 1, 2, 3], title:["♦","♣","♥","♠"],
   content:[
@@ -29,7 +29,7 @@ const qqitems = {
     'You can export them separately or export as a whole (e.g. all group chat). I suggest to export them in \'.txt\' format, and they will look like picture below.'
   ]
 };
-const qqtextapp = 
+const qqapp = 
   <div id="bottom" style={{ top:`35px` }}>
     <Contentbox id={qqitems.id} title={qqitems.title} content={qqitems.content}/>
     <p>All group chat (view in <a href="https://www.sublimetext.com/" target="_blank" style={{ color:`gray` }}>Sublime Text</a>):</p>
@@ -38,20 +38,29 @@ const qqtextapp =
   </div>
 ;
 
-const mcdcrp = 'This mod is made by myself for Java practicing and OOP programming.'
+// minecraft bioinformatics mod
 const mcset = [
+  'This mod is made by myself for Java practicing and OOP programming.',
   'The mod is still in testing, much of the code as well as description can be seen at https://github.com/lzlniu/minecraft_bioinformatics_mod.',
   'You are welcome to pull request to that repo. But recently I may not update it.'
 ];
-const kudcrp = 'KU courses study notes, collecting from fellow students.'
+const mcapp = <p></p>;
+
+// ku courses
 const kuset= [
+  'KU courses study notes, collecting from fellow students.',
   `For now, this page will be rely on GitHub page temple at: https://lzlniu.github.io/UCPH_courses. I may update it to here in the future.`
 ];
-const otherdcrp = 'This is my personal notebook (or called blog), and most of which may record in Chinese. 以下为中文记录:'
+const kuapp = <p></p>;
+
+// my blog
 const otherset = [
+  'This is my personal notebook (or called blog), and most of which may record in Chinese. 以下为中文记录:',
   '初步完成了这一React网页的基本框架，感觉JavaScript/TypeScript实在是能做太多事了，也包含了太多形形色色我还不能很好理解的编程范式，但蛮有趣。\t\t——2021/4/2',
+  '调整了一下聊天泡泡的内容板块，将其模块化了，感觉不错，然后在尝试Tensorflow.js，此前也没学过Tensorflow，初步尝试还是有点迷的。\t\t——2021/5/12',
   '待续'
 ];
+const otherapp = <p></p>;
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -121,8 +130,7 @@ function main_text2_gen(main_text2_num:number,main_text2_info:string) {
 interface MyProps {
   atitle:string;
   asubtitle:string;
-  description1:string;
-  description2_set:string[];
+  description_set:string[];
   this_app:JSX.Element;
 }
 
@@ -131,7 +139,8 @@ function CommonContent({...props}:MyProps) {
   //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(70,107,47), rgb(108,181,61), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5))` };
   //const newmainstyle = { background: `linear-gradient(0deg, rgb(33,33,33), rgb(145,255,75), rgb(155,255,65), rgb(165,255,55), rgb(175,255,45), rgb(185,255,35), rgb(195,255,25),rgb(205,255,15), rgb(215,255,5), rgb(124,144,19), rgb(33,33,33))` };
   const newmainstyle = getRandomColorSeries(); //My default color is #212121 which is rgb(33,33,33), while this is random
-  const textmlbottom = <div id="bottom" style={{ top:`25px`, marginTop:'25px' }}>{copyright}</div>;
+  const commonbottom = <div id="bottom" style={{ top:`25px`, marginTop:'25px' }}>{copyright}</div>;
+  var check_num = 0;
 
   return (
     <div>
@@ -139,10 +148,9 @@ function CommonContent({...props}:MyProps) {
         <Dragbox title={props.atitle} subtitle={props.asubtitle}/>
       </div>
       <div className="main" style={{ background: `#212121` }}>
-        <div id="main_text2" style={{ margin: `0 auto` }}><p>{props.description1}</p></div>
-        {props.description2_set.map(i => gen_main_text2(i))}
+        {props.description_set.map(i => gen_main_text2(i,++check_num))}
         {props.this_app}
-        {textmlbottom}
+        {commonbottom}
       </div>
       {scrollup}
       {scrollback}
@@ -150,9 +158,7 @@ function CommonContent({...props}:MyProps) {
   );
 };
 
-function BW() {
-  const introbottom = <div id="bottom">{contactinfo}{qrimage}{copyright}</div>;
-
+function IntroContent() { // Intro page, static HTML page
   return (
   <div>
     <div className="header">
@@ -207,7 +213,7 @@ function BW() {
       <div id="main_text2">
         <p>Recently I am constructing this page with react; I am learning text mining for future research. Also, If you are a student from UCPH, you're welcome to contribute on <a href="https://lzlniu.github.io/UCPH_courses/" target="_blank">UCPH_courses</a>, which help students sharing their study notes and learn from each other.</p>
       </div>
-		  {introbottom}
+		  <div id="bottom">{contactinfo}{qrimage}{copyright}</div>
     </div>
     {scrollup}
     {scrollback}
@@ -233,11 +239,11 @@ export const Main = () => {
       <div id="Apptop"></div>
       <Switch>
         <Route exact path="/"><Home title={pinfo.title} description={pinfo.description} date={pinfo.date}/></Route>
-        <Route path="/intro"><BW /></Route>
-        <Route path="/textml"><CommonContent atitle="Text ML" asubtitle="Using QQ" description1={qqdcrp} description2_set={qqset} this_app={qqtextapp}/></Route>
-        <Route path="/minecraft"><CommonContent atitle="Minecraft" asubtitle="Bioinformatics mod" description1={mcdcrp} description2_set={mcset} this_app={<p></p>}/></Route>
-        <Route path="/ucph"><CommonContent atitle="UCPH courses" asubtitle="" description1={kudcrp} description2_set={kuset} this_app={<p></p>}/></Route>
-        <Route path="/other"><CommonContent atitle="Other" asubtitle="Zelin's note" description1={otherdcrp} description2_set={otherset} this_app={<p></p>}/></Route>
+        <Route path="/intro"><IntroContent /></Route>
+        <Route path="/textml"><CommonContent atitle="Text ML" asubtitle="Using QQ" description_set={qqset} this_app={qqapp}/></Route>
+        <Route path="/minecraft"><CommonContent atitle="Minecraft" asubtitle="Bioinformatics mod" description_set={mcset} this_app={mcapp}/></Route>
+        <Route path="/ucph"><CommonContent atitle="UCPH courses" asubtitle="" description_set={kuset} this_app={kuapp}/></Route>
+        <Route path="/other"><CommonContent atitle="Other" asubtitle="Zelin's note" description_set={otherset} this_app={otherapp}/></Route>
       </Switch>
     </div>
   );

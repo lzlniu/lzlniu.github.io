@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# This is a React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is my personal webpage and it was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Installation, requirements and deployment
+
+Note: you need Node.js for this webpage development.
+
+```
+# installation
+npm install -g create-react-app
+
+# create app and install packages
+create-react-app xxx
+cd xxx
+npm install react
+npm install react-dom
+npm install react-router
+npm install react-router-dom
+npm install framer-motion
+npm audit fix
+npm install typescript
+npm i --save-dev @types/react
+npm i --save-dev @types/react-dom
+npm i --save-dev @types/react-router
+npm i --save-dev @types/react-router-dom
+npm install gh-pages --save-dev
+npm audit fix
+npm install @tensorflow/tfjs
+npm audit fix
+# When using TypeScript you may need to set 'skipLibCheck: true' in your tsconfig.json file if your project makes use of strict null checking or you will run into errors during compilation.
+
+# test
+npm start
+
+# deploy
+npm run deploy
+```
 
 ## Available Scripts
 
