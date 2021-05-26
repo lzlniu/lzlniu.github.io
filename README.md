@@ -29,6 +29,7 @@ npm audit fix
 npm install @tensorflow/tfjs
 npm install --save react-helmet
 npm i --save-dev @types/react-helmet
+npm i react-google-charts
 npm audit fix
 # When using TypeScript you may need to set 'skipLibCheck: true' in your tsconfig.json file if your project makes use of strict null checking or you will run into errors during compilation.
 

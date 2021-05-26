@@ -13,6 +13,7 @@ import qqgroupchatimg from "./page/content/qqgroupchatimg.png"
 import "./Main.css";
 import "./fonts.css";
 import "./page/style.css";
+import { mytimetable, BSccoursetable, MSccoursetable } from "./page/timelines";
 import { getRandomColorSeries } from "./page/random_color_series";
 import { gen_main_text2 } from "./page/main_text2_generation";
 import { Dragbox } from "./page/Dragbox";
@@ -158,6 +159,20 @@ function CommonContent({...props}:MyProps) {
   );
 };
 
+function Timelines() { // Timelines page, static HTML page
+  return (
+    <div className="timelines" style={{ background:`rgb(255,255,255)`, fontSize:`28px`, color:`rgb(225,225,225)` }}>
+      <p style={{ marginTop:`0px`,fontSize:`0.001px` }}>.</p>
+      <p style={{ background:`rgb(33,33,33)` }}>General Study and Work Timetable</p>
+      {mytimetable()}
+      <p style={{ background:`rgb(33,33,33)` }}>BSc Core Courses Timetable</p>
+      {BSccoursetable()}
+      <p style={{ background:`rgb(33,33,33)` }}>MSc Courses Timetable</p>
+      {MSccoursetable()}
+    </div>
+  );
+};
+
 function IntroContent() { // Intro page, static HTML page
   return (
   <div>
@@ -174,7 +189,7 @@ function IntroContent() { // Intro page, static HTML page
       </div>
       <div id="main_text2">
         <p>Hello, I'm Zelin Li, I studied Biological Science (Marine Biology track) at Ocean University of China, and now is a master student studying Bioinformatics (Computer Science track) at University of Copenhagen.</p>
-        <p>My study and work timelines can be found at <a href="src/page/timelines.html" target="_blank">Zelin's Timelines</a></p>
+        <p>Click to view my: <Link to="/timeline">Timelines</Link></p>
       </div>
       <div id="main_text2">
         <p>You can find this page's source code and many other stuffs on my <a href="https://github.com/lzlniu" target="_blank">github</a>.</p>
@@ -245,6 +260,7 @@ export const Main = () => {
         <Route path="/minecraft"><CommonContent atitle="Minecraft" asubtitle="Bioinformatics mod" description_set={mcset} this_app={mcapp}/></Route>
         <Route path="/ucph"><CommonContent atitle="UCPH courses" asubtitle="" description_set={kuset} this_app={kuapp}/></Route>
         <Route path="/other"><CommonContent atitle="Other" asubtitle="Zelin's note" description_set={otherset} this_app={otherapp}/></Route>
+        <Route path="/timeline"><Timelines /></Route>
       </Switch>
     </div>
   );

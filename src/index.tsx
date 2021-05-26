@@ -10,7 +10,9 @@ import { Helmet } from 'react-helmet';
 
 render(
     <React.StrictMode>
-      <Helmet><title>Zelin's page</title></Helmet>
+      <Helmet>
+        <title>Zelin's page</title>
+      </Helmet>
       <BrowserRouter>
         <Main />
       </BrowserRouter>

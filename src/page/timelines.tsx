@@ -1,8 +1,10 @@
-google.charts.load("current", { packages: ["timeline"] });
-google.charts.setOnLoadCallback(mytimetable);
-google.charts.setOnLoadCallback(BSccoursetable);
-google.charts.setOnLoadCallback(MSccoursetable);
+import { Chart } from "react-google-charts";
 
+//google.charts.load("current", { packages: ["timeline"] });
+//google.charts.setOnLoadCallback(mytimetable);
+//google.charts.setOnLoadCallback(BSccoursetable);
+//google.charts.setOnLoadCallback(MSccoursetable);
+/*
 function drawChart(data, element_id) {
   var container = document.getElementById(element_id);
   var chart = new google.visualization.Timeline(container);
@@ -14,9 +16,22 @@ function drawChart(data, element_id) {
   dataTable.addRows(data);
   chart.draw(dataTable);
 }
+*/
 
-function mytimetable() {
-  var data = [
+export const mytimetable = () => {
+  return (
+    <Chart
+    width={'99.99%'}
+    height={'250px'}
+    chartType="Timeline"
+    loader={<div>Loading Chart</div>}
+    data={[
+    [
+      { type: 'string', id: 'Term' },
+      { type: 'string', id: 'Name' },
+      { type: 'date', id: 'Start' },
+      { type: 'date', id: 'End' },
+    ],
     [
       "University of Copenhagen",
       "MSc Bioinformatics (Computer Science)",
@@ -52,13 +67,20 @@ function mytimetable() {
       "RA, Institute of Evolution and Marine Biodiversity",
       new Date(2018, 2, 15),
       new Date(2018, 5, 15)
-    ]
-  ];
-  drawChart(data, "mytimetable");
+    ],
+    ]}
+  />   
+  );
 }
 
-function BSccoursetable() {
-  var data = [
+export const BSccoursetable = () => {
+  return (
+    <Chart
+    width={'99.99%'}
+    height={'450px'}
+    chartType="Timeline"
+    loader={<div>Loading Chart</div>}
+    data={[
     [
       "General Compulsory",
       "Advanced Mathematics I 1",
@@ -263,12 +285,19 @@ function BSccoursetable() {
       new Date(2019, 9, 15),
       new Date(2020, 4, 30)
     ],
-  ];
-  drawChart(data, "BSccoursetable");
+  ]}
+/>   
+);
 }
 
-function MSccoursetable() {
-  var data = [
+export const MSccoursetable = () => {
+  return (
+    <Chart
+    width={'99.99%'}
+    height={'250px'}
+    chartType="Timeline"
+    loader={<div>Loading Chart</div>}
+    data={[
     [
       "Compulsory",
       "Advanced Algorithms and Data Structures",
@@ -310,7 +339,8 @@ function MSccoursetable() {
       "Arctic Biology",
       new Date(2021, 3, 26),
       new Date()
-    ]
-  ];
-  drawChart(data, "MSccoursetable");
+    ],
+  ]}
+/>   
+);
 }
