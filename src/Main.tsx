@@ -203,7 +203,7 @@ function IntroContent() { // Intro page, static HTML page
       </div>
       <div id="main_text2">
         <p>I had spent one year internship at Institute of Oceanology, Chinese Academy of Sciencs. Mainly focused on comparative genomics. I worked on NGS high-throughout sequences analysis, and mostly is DNA-seq analysis there. Including de novo genome assembly, annotation, amplicon analysis and phylogenetics analysis, here is the relative publication: <a href="https://doi.org/10.1016/j.hal.2020.101911" target="_blank">Development of a high-resolution molecular marker ... genomes</a></p>
-        <p>And here is the <a href="https://raw.githubusercontent.com/lzlniu/lzlniu.github.io/master/src/page/content/scan_chenn.pdf" target="_blank">Recommendation</a> from my mentor <a href="https://scholar.google.ca/citations?user=tEN1cS0AAAAJ" target="_blank">Nansheng Chen</a>.</p>
+        <p>And here is the <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/lzlniu/lzlniu.github.io/master/src/page/content/scan_chenn.pdf" target="_blank">Recommendation</a> from my mentor <a href="http://english.qdio.cas.cn/people2016/faculty_and_staff2016/201907/t20190719_213334.html" target="_blank">Nansheng Chen</a>.</p>
       </div>
       <div id="main_text2">
         <p>I used several soft to do these jobs and create several bioinformatics pipelines (you can found them on my Github repositories), I also list up these softwares' website or Github page and recommend books here:</p>
