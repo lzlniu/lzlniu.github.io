@@ -21,7 +21,7 @@ function drawChart(data, element_id) {
 export const mytimetable = () => {
   return (
     <Chart
-    width={'99.99%'}
+    width={'99.9%'}
     height={'250px'}
     chartType="Timeline"
     loader={<div>Loading Chart</div>}
@@ -76,11 +76,17 @@ export const mytimetable = () => {
 export const BSccoursetable = () => {
   return (
     <Chart
-    width={'99.99%'}
+    width={'99.9%'}
     height={'450px'}
     chartType="Timeline"
     loader={<div>Loading Chart</div>}
     data={[
+    [
+      { type: 'string', id: 'Term' },
+      { type: 'string', id: 'Name' },
+      { type: 'date', id: 'Start' },
+      { type: 'date', id: 'End' },
+    ],
     [
       "General Compulsory",
       "Advanced Mathematics I 1",
@@ -285,19 +291,25 @@ export const BSccoursetable = () => {
       new Date(2019, 9, 15),
       new Date(2020, 4, 30)
     ],
-  ]}
-/>   
-);
+    ]}
+    />   
+  );
 }
 
 export const MSccoursetable = () => {
   return (
     <Chart
-    width={'99.99%'}
+    width={'99.9%'}
     height={'250px'}
     chartType="Timeline"
     loader={<div>Loading Chart</div>}
     data={[
+    [
+      { type: 'string', id: 'Term' },
+      { type: 'string', id: 'Name' },
+      { type: 'date', id: 'Start' },
+      { type: 'date', id: 'End' },
+    ],
     [
       "Compulsory",
       "Advanced Algorithms and Data Structures",
@@ -340,7 +352,7 @@ export const MSccoursetable = () => {
       new Date(2021, 3, 26),
       new Date()
     ],
-  ]}
-/>   
-);
+    ]}
+    />   
+  );
 }
