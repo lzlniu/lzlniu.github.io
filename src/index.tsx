@@ -5,14 +5,14 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import { Helmet } from 'react-helmet';
 
-const App = () => <Main />;
+//const App = () => <Main />;
 //render(<App />, document.getElementById("root"))
 
 render(
     <React.StrictMode>
       <Helmet><title>Zelin's page</title></Helmet>
       <BrowserRouter>
-        <App />
+        <Main />
       </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

@@ -6,9 +6,9 @@ export const Dragbox = ({title,subtitle}:any) => {
   const constraintsRef = useRef(null);
 
   return (
-    <div className="example-container">
+    <div className="top-container" >
       <motion.div className="drag-area" ref={constraintsRef} />
-      <motion.div drag dragConstraints={constraintsRef}>
+      <motion.div drag dragConstraints={constraintsRef} style={{cursor:`pointer`}}>
         <h1>{title}</h1>
         <h2>{subtitle}</h2>
       </motion.div>

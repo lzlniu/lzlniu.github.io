@@ -64,7 +64,7 @@
 	width:70%;
 	border-radius:10%;
 }
-.example-container div {
+.top-container div {
   color:#212121;
   background-color: rgb(225,225,225);
   border-radius: 30px;
@@ -75,7 +75,7 @@
   -o-transition:all 1s;
   -moz-transition:all 1s;
 }
-.example-container .drag-area {
+.top-container .drag-area {
   opacity: 0.2;
   background: white;
   position: absolute;
@@ -90,11 +90,11 @@
 	background-color:#212121;
 	top:-1vh;
 }
-#header_text h1, .example-container div h1 {
+#header_text h1, .top-container div h1 {
 	font-size:6vh;
 	font-family:Quicksand,cursive,sans-serif;
 }
-#header_text h2, .example-container div h2 {
+#header_text h2, .top-container div h2 {
 	font-size:3.5vh;
 	font-family:Quicksand,cursive,sans-serif;
 }

@@ -174,6 +174,7 @@ function IntroContent() { // Intro page, static HTML page
       </div>
       <div id="main_text2">
         <p>Hello, I'm Zelin Li, I studied Biological Science (Marine Biology track) at Ocean University of China, and now is a master student studying Bioinformatics (Computer Science track) at University of Copenhagen.</p>
+        <p>My study and work timelines can be found at <a href="src/page/timelines.html" target="_blank">Zelin's Timelines</a></p>
       </div>
       <div id="main_text2">
         <p>You can find this page's source code and many other stuffs on my <a href="https://github.com/lzlniu" target="_blank">github</a>.</p>
