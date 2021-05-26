@@ -1,7 +1,7 @@
 import * as React from "react";
 import { render } from "react-dom";
 import { Main } from "./Main";
-import { BrowserRouter } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import "./index.css";
 import { Helmet } from 'react-helmet';
 
@@ -13,9 +13,9 @@ render(
       <Helmet>
         <title>Zelin's page</title>
       </Helmet>
-      <BrowserRouter>
+      <HashRouter>
         <Main />
-      </BrowserRouter>
+      </HashRouter>
     </React.StrictMode>,
     document.getElementById('root')
 );

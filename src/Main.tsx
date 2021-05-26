@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useRef } from "react";
+import { useRef, useEffect } from "react";
 import { motion, useCycle } from "framer-motion";
 //import { useDimensions } from "./use-dimensions";
 import { MenuToggle } from "./MenuToggle";
@@ -18,6 +18,7 @@ import { getRandomColorSeries } from "./page/random_color_series";
 import { gen_main_text2 } from "./page/main_text2_generation";
 import { Dragbox } from "./page/Dragbox";
 import { Contentbox } from "./page/Contentbox";
+import { render } from "@testing-library/react";
 
 // qq text machine learning
 const qqset = ['']; //This is an app for text mining on Tecent QQ chat files.
@@ -59,6 +60,7 @@ const otherset = [
   'This is my personal notebook (or called blog), and most of which may record in Chinese. 以下为中文记录:',
   '初步完成了这一React网页的基本框架，感觉JavaScript/TypeScript实在是能做太多事了，也包含了太多形形色色我还不能很好理解的编程范式，但蛮有趣。\t\t——2021/4/2',
   '调整了一下聊天泡泡的内容板块，将其模块化了，感觉不错，然后在尝试Tensorflow.js，此前也没学过Tensorflow，初步尝试还是有点迷的。\t\t——2021/5/12',
+  'Tensorflow没管了，但加了仨时间表，用了Google Charts。\t\t——2021/5/26',
   '待续'
 ];
 const otherapp = <p></p>;
@@ -84,8 +86,9 @@ const sidebar = {
 };
 
 //const header_bottom = <div id="header_bottom" style={{ bottom:`0px`}}></div>;
-const scrollup = <div className="downb"><a href="#Apptop"><img src={arrowpng}></img></a></div>;
-const scrollback = <div className="downb2"><Link to="/" style={{ background:`transparent` }}><a><img src={arrowpng} style={{ transform: `rotate(-90deg)` }}></img></a></Link></div>
+const scrollup = <div className="downb"><button onClick={() => { window.scrollTo(0, 0) }}><img src={arrowpng}></img></button></div>
+//const scrollup = <div className="downb"><a href="#Apptop"><img src={arrowpng}></img></a></div>;
+const scrollback = <div className="downb2"><Link to="/" style={{ background:`transparent` }}><button><img src={arrowpng} style={{ transform: `rotate(-90deg)` }}></img></button></Link></div>
 const contactinfo = <p>If you would like to know more about me, feel free to contact me through WeChat Official Account 'newslzl' or my e-mail: zelin.l@foxmail.com. Google scholar: <a href="https://scholar.google.com/citations?user=y_hS_t4AAAAJ" style={{color:`gray`}} target="_blank">Zelin Li</a>, <a href="https://orcid.org/0000-0002-0790-3064" style={{color:`gray`}} target="_blank">ORCID</a></p>;
 const qrimage = <img src={qrcode} alt="newslzl's QR-code" style={{ maxWidth:`360px` }}></img>;
 const copyright = <p style={{fontSize:`14px`, marginLeft:`10px`, marginRight:`10px` }}>Copyright 2020-2021 Zelin Li all rights reserved</p>;
@@ -162,6 +165,7 @@ function CommonContent({...props}:MyProps) {
 function Timelines() { // Timelines page, static HTML page
   return (
     <div className="timelines" style={{ background:`rgb(255,255,255)`, fontSize:`28px`, color:`rgb(225,225,225)` }}>
+      <div id="Apptop"></div>
       <p style={{ marginTop:`0px`,fontSize:`0.001px` }}>.</p>
       <p style={{ background:`rgb(33,33,33)` }}>General Study and Work Timetable</p>
       {mytimetable()}
@@ -169,6 +173,8 @@ function Timelines() { // Timelines page, static HTML page
       {BSccoursetable()}
       <p style={{ background:`rgb(33,33,33)` }}>MSc Courses Timetable</p>
       {MSccoursetable()}
+      {scrollup}
+      {scrollback}
     </div>
   );
 };
@@ -185,7 +191,7 @@ function IntroContent() { // Intro page, static HTML page
     <div className="main">
       <div id="main_text">
         <p>Note1:Hover/tap the transparent dialog box to show the contents.</p>
-        <p>Note2:Click the top left button back to the menu, click the top right button to back to this page top.</p>
+        <p>Note2:Click the top left button back to the main menu, click the top right button to scroll to the top.</p>
       </div>
       <div id="main_text2">
         <p>Hello, I'm Zelin Li, I studied Biological Science (Marine Biology track) at Ocean University of China, and now is a master student studying Bioinformatics (Computer Science track) at University of Copenhagen.</p>
@@ -252,7 +258,7 @@ export const Main = () => {
 
   return (
     <div className="App">
-      <div id="Apptop"></div>
+      {/*<div id="Apptop"></div>*/}
       <Switch>
         <Route exact path="/"><Home title={pinfo.title} description={pinfo.description} date={pinfo.date}/></Route>
         <Route path="/intro"><IntroContent /></Route>

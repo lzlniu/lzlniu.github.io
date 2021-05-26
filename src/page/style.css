@@ -1,34 +1,31 @@
 .downb {
 	position:fixed;
-	margin:0 auto;
+	margin:0 0;
 	top:10px;
 	right:10px;
 }
 .downb2 {
 	position:fixed;
-	margin:0 auto;
+	margin:0 0;
 	top:10px;
 	left:10px;
 }
-.downb a, .downb2 a {
+.downb button, .downb2 button {
 	position:relative;
-	display:block;
+	cursor:pointer;
 	width:80px;
 	height:80px;
-	border-radius:50%;
+	border: rgba(33,33,33,0.7);
+	border-radius:100%;
 	background: rgba(33,33,33,0.7);
-	text-align:center;
-	margin:0 auto;
+	margin:0 0;
 	font-size:0;
 	-webkit-transition:all .5s;
 	-o-transition:all .5s;
 	-moz-transition:all .5s;
 	transition:all .5s;
 }
-.downb a img, .downb2 a img {
-	padding:15px;
-}
-.downb a:hover, .downb2 a:hover {
+.downb button:hover, .downb2 button:hover {
 	transform:rotate(360deg);
 	-ms-transform:rotate(360deg);
 	-moz-transform:rotate(360deg);
