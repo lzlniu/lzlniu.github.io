@@ -300,7 +300,7 @@ export const MSccoursetable = () => {
   return (
     <Chart
     width={'99.9%'}
-    height={'250px'}
+    height={'320px'}
     chartType="Timeline"
     loader={<div>Loading Chart</div>}
     data={[
@@ -344,15 +344,45 @@ export const MSccoursetable = () => {
       "Restricted Elective",
       "Data Science",
       new Date(2021, 1, 8),
-      new Date()
+      new Date(2021, 5, 27)
     ],
     [
       "Elective",
       "Arctic Biology",
       new Date(2021, 3, 26),
-      new Date()
+      new Date(2021, 5, 27)
+    ],
+    [
+      "Elective",
+      "Natural Language Processing",
+      new Date(2021, 8, 6),
+      new Date(2021, 10, 14)
+    ],
+    [
+      "Restricted Elective",
+      "Big Data Management (Technical)",
+      new Date(2021, 7, 30),
+      new Date(2021, 11, 31)
+    ],
+    [
+      "Elective",
+      "Software Development of Web Services",
+      new Date(2022, 0, 3),
+      new Date(2022, 1, 1)
+    ],
+    [
+      "Restricted Elective",
+      "Project out of scope at CPR",
+      new Date(2021, 8, 1),
+      new Date(2022, 0, 31)
+    ],
+    [
+      "Elective",
+      "Project out of scope at BIO",
+      new Date(2021, 10, 22),
+      new Date(2022, 0, 31)
     ],
     ]}
-    />   
+    />
   );
 }
