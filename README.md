@@ -1,4 +1,4 @@
-# This is a React App
+# Zelin's page [![GitHub license](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/lzlniu/lzlniu.github.io/blob/master/LICENSE)
 
 This is my personal webpage and it was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
