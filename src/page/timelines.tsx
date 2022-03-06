@@ -40,8 +40,14 @@ export const mytimetable = () => {
     ],
     [
       "University of Copenhagen",
-      "RA, Center for Social Evolution",
+      "SA, Center for Social Evolution",
       new Date(2021, 4, 25),
+      new Date(2022, 0, 25)
+    ],
+    [
+      "Novo Nordisk",
+      "Bioinformatics Intern",
+      new Date(2022, 1, 1),
       new Date()
     ],
     [
@@ -368,7 +374,7 @@ export const MSccoursetable = () => {
       "Elective",
       "Software Development of Web Services",
       new Date(2022, 0, 3),
-      new Date(2022, 1, 1)
+      new Date(2022, 0, 23)
     ],
     [
       "Restricted Elective",
@@ -380,7 +386,13 @@ export const MSccoursetable = () => {
       "Elective",
       "Project out of scope at BIO",
       new Date(2021, 10, 22),
-      new Date(2022, 0, 31)
+      new Date(2022, 0, 21)
+    ],
+    [
+      "Compulsory",
+      "Master Thesis",
+      new Date(2022, 1, 1),
+      new Date()
     ],
     ]}
     />

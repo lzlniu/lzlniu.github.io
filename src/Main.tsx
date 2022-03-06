@@ -205,6 +205,9 @@ function IntroContent() { // Intro page, static HTML page
       <div id="main_text2">
         <p>I had spent one year internship at Institute of Oceanology, Chinese Academy of Sciencs. Mainly focused on comparative genomics. I worked on NGS high-throughout sequences analysis, and mostly is DNA-seq analysis there. Including de novo genome assembly, annotation, amplicon analysis and phylogenetics analysis, here is the relative publication: <a href="https://doi.org/10.1016/j.hal.2020.101911" target="_blank">Development of a high-resolution molecular marker ... genomes</a></p>
         <p>And here is the <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/lzlniu/lzlniu.github.io/master/src/page/content/scan_chenn.pdf" target="_blank">Recommendation</a> from my mentor <a href="http://english.qdio.cas.cn/people2016/faculty_and_staff2016/201907/t20190719_213334.html" target="_blank">Nansheng Chen</a>.</p>
+        <p>I have done two Project Outside Course Scope at UCPH, they are: <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/lzlniu/lzlniu.github.io/master/src/page/content/Ants_Project.pdf" target="_blank">GAGA Project</a> and <a href="https://docs.google.com/viewer?url=https://raw.githubusercontent.com/lzlniu/lzlniu.github.io/master/src/page/content/Text-mining_Project.pdf" target="_blank">Text-mining Project</a>.</p>
+        <p>Now I am an intern at Novo Nordisk, working on building tools' documentation and Webpage/SharePoint, later on I will focus on text-mining related tools development.</p>
+        <p>My master thesis is about text-mining, focus on weighting the scientific articles using different methods including unsupervised learning models and traditional criteria such as citation counts and Impact-Factors and their variation.</p>
       </div>
       <div id="main_text2">
         <p>I used several soft to do these jobs and create several bioinformatics pipelines (you can found them on my Github repositories), I also list up these softwares' website or Github page and recommend books here:</p>
@@ -235,7 +238,8 @@ function IntroContent() { // Intro page, static HTML page
 			  </details>
       </div>
       <div id="main_text2">
-        <p>Recently I am constructing this page with react; I am learning text mining for future research. Also, If you are a student from UCPH, you're welcome to contribute on <a href="https://lzlniu.github.io/UCPH_courses/" target="_blank">UCPH_courses</a>, which help students sharing their study notes and learn from each other.</p>
+        <p>I love web programming and computer system, so I took DTU course Software Development of Web Services for back-end and learned front-end by myself.</p>
+        <p>Also, I made github pages about courses in UCPH, if you are a student from UCPH, you're welcome to contribute on it: <a href="https://lzlniu.github.io/UCPH_courses/" target="_blank">UCPH_courses</a>, which help students sharing their study notes and learn from each other.</p>
       </div>
 		  <div id="bottom">{contactinfo}{qrimage}{copyright}</div>
     </div>
